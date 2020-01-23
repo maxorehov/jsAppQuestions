@@ -13,8 +13,16 @@ module.exports = {
 	},
 	plugins: [
 		new HTMLPlugin({
-			template: './src/index.html'
+			template: './src/index.html',
 		}), 
 		new CleanWebpackPlugin()
-	]
+	],
+	module: {
+		rules: [
+		  {
+			test: /\.css$/i,
+			use: ['style-loader', 'css-loader'],
+		  },
+		],
+	  },
 }
